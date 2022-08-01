@@ -1,0 +1,55 @@
+.gns {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  margin: 20px;
+  background: #fff;
+  width: 350px;
+  .gns-btn-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .btn-module {
+      margin: 0 5px;
+    }
+  }
+  .moduleContainer {
+    border: 1px solid rgb(199, 199, 199);
+    .header {
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      width: -webkit-fill-available;
+      .iconTitle {
+        background: yellow;
+        padding: 5px 10px;
+      }
+      .actions {
+        .mat-icon {
+          cursor: pointer;
+          &.close:hover {
+            color: rgb(255, 75, 75);
+          }
+        }
+      }
+    }
+    .main {
+      background: #f5f5f5;
+      height: 70vh;
+      overflow: auto;
+      position: relative;
+      ::ng-deep form {
+        .mat-form-field {
+          padding: 0 5px;
+        }
+      }
+    }
+    .minimize {
+      max-height: 0vh;
+      overflow: hidden;
+      padding: 0;
+    }
+  }
+}

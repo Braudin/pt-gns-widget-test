@@ -1,0 +1,90 @@
+<form
+  [formGroup]="form"
+  *ngIf="showForm"
+  (ngSubmit)="onSubmit()"
+  fxLayout="row wrap"
+  fxLayoutAlign="center start">
+  <mat-form-field fxFlex="30">
+    <mat-label>Tipo de identificación</mat-label>
+    <mat-select formControlName="idType" [value]="null">
+      <mat-option *ngFor="let type of typesIDs" [value]="type.value">
+        {{ type.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="getError('idType') !== ''">
+      {{ getError('idType') }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field fxFlex>
+    <mat-label>Num. identificación</mat-label>
+    <input matInput formControlName="id" placeholder="identificación" />
+    <mat-error *ngIf="getError('id') !== ''">
+      {{ getError('id') }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field fxFlex="100">
+    <mat-label>Pais</mat-label>
+    <mat-select formControlName="country" [value]="null">
+      <mat-option *ngFor="let contry of countryes" [value]="contry.name">
+        {{ contry.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="getError('country') !== ''">
+      {{ getError('country') }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field fxFlex="50">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="name" placeholder="Nombre" />
+    <mat-error *ngIf="getError('name') !== ''">
+      {{ getError('id') }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field fxFlex="50">
+    <mat-label>Apellido</mat-label>
+    <input matInput formControlName="lastname" placeholder="Apellido" />
+    <mat-error *ngIf="getError('lastname') !== ''">
+      {{ getError('lastname') }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field fxFlex="100">
+    <mat-label>Correo E.</mat-label>
+    <input matInput formControlName="email" placeholder="Correo electronico" />
+    <mat-error *ngIf="getError('email') !== ''">
+      {{ getError('email') }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field fxFlex="100">
+    <mat-label>Teléfono</mat-label>
+    <input matInput formControlName="phone" placeholder="Numero de Teléfono" />
+    <mat-error *ngIf="getError('phone') !== ''">
+      {{ getError('phone') }}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field fxFlex="100">
+    <textarea
+      matInput
+      formControlName="summary"
+      placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+    <mat-error *ngIf="getError('summary') !== ''">
+      {{ getError('summary') }}
+    </mat-error>
+  </mat-form-field>
+  <mat-checkbox fxFlex="100" formControlName="policies">
+    <a target="_blank" href="https://braudin.com">
+      Acepto el tratamiento de datos personales
+    </a>
+  </mat-checkbox>
+  <mat-error fxFlex="100" *ngIf="getError('policies') !== ''">
+    {{ getError('policies') }}
+  </mat-error>
+  <p>
+    <button
+      mat-flat-button
+      [disabled]="!form.valid"
+      color="primary"
+      (click)="onSubmit()">
+      INICIAR CHAT
+    </button>
+  </p>
+</form>

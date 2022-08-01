@@ -1,0 +1,11 @@
+<div class="gns-webchat-container">
+  <span [ngSwitch]="dataOk">
+    <ng-container *ngSwitchCase="false">
+      <app-form-web-chat (sendDataEvent)="dataComplete($event)">
+      </app-form-web-chat>
+    </ng-container>
+    <ng-container *ngSwitchCase="true">
+      <app-chat-web-chat></app-chat-web-chat>
+    </ng-container>
+  </span>
+</div>

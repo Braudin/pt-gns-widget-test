@@ -1,0 +1,33 @@
+.gns-chat {
+  position: absolute;
+  overflow: auto;
+  bottom: 0;
+  .gns-chat-main {
+    .welcome {
+      padding: 0.5rem;
+      text-align: center;
+      border-bottom: 1px solid rgb(199, 199, 199);
+    }
+  }
+  .gns-chat-bottom {
+    background: #fff;
+    padding: 5px;
+    .gns-chat-sending {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-content: center;
+      padding: 1rem 0;
+      .gns-chat-imput {
+        border: 1px solid rgb(199, 199, 199);
+        padding: 5px 10px;
+        width: -webkit-fill-available;
+      }
+    }
+    .gns-chat-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
