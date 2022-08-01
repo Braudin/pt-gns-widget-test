@@ -10,8 +10,8 @@ import { environment } from 'src/environments/environment'
 export class WebChatService {
   constructor(private http: HttpClient) {}
 
-  getHealth(): Observable<Response> {
+  getHealth(): Observable<boolean> {
     const url = `${environment.apiUrl}${EMPOINTS.health}`
-    return this.http.get<Response>(url).pipe(map(data => data))
+    return this.http.get<boolean>(url).pipe(map(data => data))
   }
 }

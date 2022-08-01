@@ -1,7 +1,5 @@
 .gns-chat {
-  position: absolute;
   overflow: auto;
-  bottom: 0;
   .gns-chat-main {
     .welcome {
       padding: 0.5rem;
@@ -10,8 +8,6 @@
     }
   }
   .gns-chat-bottom {
-    background: #fff;
-    padding: 5px;
     .gns-chat-sending {
       display: flex;
       flex-direction: row;
@@ -21,7 +17,14 @@
       .gns-chat-imput {
         border: 1px solid rgb(199, 199, 199);
         padding: 5px 10px;
+        margin-right: 0.5rem;
         width: -webkit-fill-available;
+      }
+      .delete {
+        color: red;
+      }
+      .susses {
+        color: green;
       }
     }
     .gns-chat-footer {

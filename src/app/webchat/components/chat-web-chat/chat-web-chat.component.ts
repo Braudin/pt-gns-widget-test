@@ -7,11 +7,15 @@ import { WebChatService } from '../../services/web-chat.service'
   styleUrls: ['./chat-web-chat.component.scss'],
 })
 export class ChatWebChatComponent implements OnInit {
+  active = false
   constructor(private webChatService: WebChatService) {}
 
   workOrderDetails() {
     this.webChatService.getHealth().subscribe(resp => {
-      console.log(resp)
+      setTimeout(() => {
+        // Para prueba
+        this.active = resp
+      }, 2000)
     })
   }
 

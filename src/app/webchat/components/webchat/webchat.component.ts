@@ -7,7 +7,7 @@ import { DataForm } from '../../interface/dataform'
   styleUrls: ['./webchat.component.scss'],
 })
 export class WebchatComponent {
-  dataOk = true
+  dataOk = false
   dataForm?: DataForm
 
   public dataComplete($event: DataForm) {
